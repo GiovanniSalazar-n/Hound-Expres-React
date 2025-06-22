@@ -15,7 +15,7 @@ function App() {
   const [modalOpen, setModalOpen] = useState(false);
   const [selectedGuide, setSelectedGuide] = useState(null);
 
-  // Contadores
+  
   const [total, setTotal] = useState(0);
   const [inTransit, setInTransit] = useState(0);
   const [delivered, setDelivered] = useState(0);
@@ -48,7 +48,7 @@ const updateState = (guideNumber) => {
       } else if (guide.state === "En tránsito") {
         newState = "Entregado";
       } else {
-        return guide; // no cambia si ya está entregado
+        return guide; 
       }
 
       updatedDate = guide.date;
@@ -64,7 +64,7 @@ const updateState = (guideNumber) => {
   if (newState) {
     setGuides(updatedGuides);
 
-    // Solo agregar una entrada al historial si cambió el estado
+  
     setHistory((prev) => {
       const prevHist = prev[guideNumber] || [];
       return {
